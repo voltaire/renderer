@@ -1,7 +1,5 @@
 FROM centos:7
 
-VOLUME /output
-
 ADD https://overviewer.org/rpms/overviewer.repo /etc/yum.repos.d/overviewer.repo
 RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm unzip
 RUN yum install -y Minecraft-Overviewer
