@@ -2,7 +2,7 @@ FROM centos:7
 
 ADD https://overviewer.org/rpms/overviewer.repo /etc/yum.repos.d/overviewer.repo
 RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm unzip
-RUN yum install -y Minecraft-Overviewer
+RUN yum install -y Minecraft-Overviewer && yum clean all -y
 
 ADD https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip /root/awscli.zip
 RUN unzip /root/awscli.zip && ./aws/install
