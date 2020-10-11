@@ -1,6 +1,6 @@
 os: linux
 dist: focal
-language: ruby
+language: minimal
 services:
 - docker
 script:
