@@ -3,7 +3,7 @@
 set -e
 
 mkdir -p /worlds /data
-aws s3 cp ${BACKUP_TARBALL_URI} /data/world.tar.gz
+aws s3 cp --no-progress ${BACKUP_TARBALL_URI} /data/world.tar.gz
 cd /worlds
 tar xf /data/world.tar.gz
 overviewer.py --config /overviewer_cfg.py
