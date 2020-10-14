@@ -10,5 +10,5 @@ overviewer.py --config /overviewer_cfg.py
 
 AWS_ACCESS_KEY_ID=${DESTINATION_ACCESS_KEY_ID}
 AWS_SECRET_ACCESS_KEY=${DESTINATION_SECRET_ACCESS_KEY}
-aws s3 sync --endpoint=${DESTINATION_BUCKET_ENDPOINT} --delete /output/ ${DESTINATION_BUCKET_URI}
+aws s3 sync --endpoint=${DESTINATION_BUCKET_ENDPOINT} --acl 'public-read' --delete /output/ ${DESTINATION_BUCKET_URI}
 curl -H 'Content-Type: application/json' -XPOST ${DISCORD_WEBHOOK_URL} -d '{"content": "NEW MAP NEW MAP NEW MAP BRUH CHECK IT OUT https://map.tonkat.su YOU MIGHT NEED TO CLEAR YOUR CACHE"}'
