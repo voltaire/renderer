@@ -2,7 +2,7 @@ FROM ubuntu:latest
 ARG OVERVIEWER_VERSION=5d61f9a3f777655bb516266aa573c40a1a47d070
 
 RUN apt-get update && \
-    apt-get install -y unzip git build-essential python3-pil python3-dev python3-numpy && \
+    apt-get install -y curl unzip git build-essential python3-pil python3-dev python3-numpy && \
     rm -rf /var/lib/apt/lists/*
 
 ADD https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip /root/awscli.zip
