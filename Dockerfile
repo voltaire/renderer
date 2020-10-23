@@ -14,7 +14,7 @@ ADD https://github.com/overviewer/Minecraft-Overviewer/archive/${OVERVIEWER_VERS
 WORKDIR /build
 RUN unzip /root/overviewer.zip
 WORKDIR /build/Minecraft-Overviewer-${OVERVIEWER_VERSION}
-RUN python3 setup.py install && rm -rf /build
+RUN python3 setup.py install && rm -rf /build /root/overviewer.zip
 WORKDIR /root
 
 ADD wrapper.sh /wrapper
