@@ -1,8 +1,11 @@
-FROM centos:7
+FROM ubuntu:latest
 
-ADD https://overviewer.org/rpms/overviewer.repo /etc/yum.repos.d/overviewer.repo
-RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm unzip
-RUN yum install -y Minecraft-Overviewer && yum clean all -y
+RUN apt-get update && \
+    apt-get install -y curl gnupg unzip && \
+    echo 'deb https://overviewer.org/debian ./' >> /etc/apt/sources.list && \
+    curl https://overviewer.org/debian/overviewer.gpg.asc | apt-key add - && \
+    apt-get update && apt-get -y install minecraft-overviewer && \
+    rm -rf /var/lib/apt/lists/*
 
 ADD https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip /root/awscli.zip
 RUN unzip /root/awscli.zip && ./aws/install && rm -rf /root/awscli.zip /root/aws
