@@ -18,4 +18,4 @@ if [ -n "$DESTINATION_ACCESS_KEY_ID" ] && [ -n "$DESTINATION_SECRET_ACCESS_KEY" 
 fi
 
 aws s3 sync ${ENDPOINT_FLAG} --acl 'public-read' --delete /output/ ${DESTINATION_BUCKET_URI}
-curl -H 'Content-Type: application/json' -XPOST ${DISCORD_WEBHOOK_URL} -d '{"content": "NEW MAP NEW MAP NEW MAP BRUH CHECK IT OUT https://map.tonkat.su YOU MIGHT NEED TO CLEAR YOUR CACHE"}'
+curl -H 'Content-Type: application/json' -XPOST ${DISCORD_WEBHOOK_URL} -d "{\"content\": \"new map rendered for ${BACKUP_TARBALL_URI}. See https://map.tonkat.su/\"}"
