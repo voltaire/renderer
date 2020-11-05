@@ -26,3 +26,9 @@ jobs:
                 with:
                     push: true
                     tags: ghcr.io/${{ github.repository }}:latest
+            -
+                name: notify renderer
+                uses: bsdlp/notify-docker-pull@6e3f9276c63e2e57a02c6841ac6aee71eb2646ff
+                with:
+                    server_url: "https://renderer.tonkat.su"
+                    image: ghcr.io/${{ github.repository }}:latest
