@@ -29,4 +29,4 @@ fi
 
 aws cloudwatch put-metric-data --namespace Renderer --metric-name RunDuration --dimensions Runner=${RUNNER_NAME} --value ${SECONDS} --unit Seconds
 
-curl -H 'Content-Type: application/json' -XPOST ${DISCORD_WEBHOOK_URL} -d "{\"content\": \"new map rendered for ${BACKUP_TARBALL_URI}. See https://map.tonkat.su/\"}"
+curl -H 'Content-Type: application/json' -XPOST ${DISCORD_WEBHOOK_URL} -d "{\"embeds\":[{\"title\":\"map.tonkat.su\",\"description\":\"New map renderered!\",\"url\":\"https://map.tonkat.su\",\"fields\":[{\"name\":\"backup tarball\",\"value\":\"${BACKUP_TARBALL_URI}\"}]}]}"
