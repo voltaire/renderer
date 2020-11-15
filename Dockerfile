@@ -22,4 +22,4 @@ ADD wrapper.sh /wrapper
 RUN chmod +x /wrapper
 ADD overviewer_cfg.py /overviewer_cfg.py
 
-CMD ["/bin/bash", "/wrapper"]
+ENTRYPOINT ["/bin/bash", "/wrapper"]
